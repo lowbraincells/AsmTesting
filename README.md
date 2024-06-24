@@ -1,5 +1,27 @@
 # AsmTesting
 
+## Structure
+
+### Sources Directory (Hidden)
+Books, WebPages, Etc which are referenced at the end of the README
+
+### Demos Directory
+Where i have fun playing around with assembly and test things
+
+### Examples Directory
+Examples, exercise made by the sources
+
+## Tools
+
+### IDE + Plugins
+VSCode with tabnine (AI Plugin) + need to clean plugins to find out which are doing what
+
+### Compilers and parameters
+nasm (compile .asm to .o) + gcc (compile .o to executable (elf64))
+
+### Automation
+makefile ig
+
 ## Examples
 
 ### 1-1 [1]
