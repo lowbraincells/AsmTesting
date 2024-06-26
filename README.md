@@ -45,3 +45,4 @@ makefile ig
 ### [2] https://nasm.us
 ### [3] https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
 ### [4] https://www.felixcloutier.com/x86/index.html (Derived from [3])
+### [5] https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/ 

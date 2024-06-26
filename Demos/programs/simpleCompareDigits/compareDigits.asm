@@ -78,24 +78,6 @@ reads:
     leave
     ret
 ;---------------------------------------------
-isInteger:
-    push rbp
-    mov rbp,rsp
-    
-    leave
-    ret
-;---------------------------------------------
-getSingleDigit:
-    push rbp
-    mov rbp,rsp
-    push r8
-    ;mov r8,r15
-    ;SUB r8,30
-
-    pop r8
-    leave
-    ret
-;---------------------------------------------
 exits:
     mov rax,60
     xor rdi,rdi
