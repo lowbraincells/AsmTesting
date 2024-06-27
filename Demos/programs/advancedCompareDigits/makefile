@@ -1,6 +1,6 @@
 mainProduction: main.oProduction
-	ld -o main compareDigits.o libio.o -nostdlib -e main
-# gcc -o main compareDigits.o -L. -lio -no-pie	
+	ld -o main compareDigits.o libio.o libdata.o -nostdlib -e main
+# gcc -o main compareDigits.o libio.o -no-pie	
 	strip --strip-all main
 main.oProduction: compareDigits.asm
 	nasm -f elf64 -o compareDigits.o compareDigits.asm

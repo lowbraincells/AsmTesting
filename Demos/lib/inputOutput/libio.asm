@@ -51,10 +51,6 @@ mov   rbp, rsp
       mov   al, [.inputchar]      ; char is NL?
       cmp   al, byte[.NL]
       je    .rdone            ; NL end
-      cmp   al, 97           ; lower than a?
-      jl    .readc           ; ignore it
-      cmp   al, 122          ; higher than z?
-      jg    .readc           ; ignore it
       inc   r14                    ; inc counter
       cmp   r14, r13
       ja    .readc           ; buffer max reached, ignore

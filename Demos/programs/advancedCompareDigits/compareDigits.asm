@@ -4,27 +4,41 @@ section .data
     fDigitHigher    db  "first digit is higher", 10, 0
     sDigitHigher    db  "second digit is higher", 10, 0
     bDigitsEqual    db  "both digits are equal", 10, 0
-    input   db  256 dup(0)
+    NL  db  10, 0
 section .bss
+    input   resb  2
+    fDigitContent   resb  2
+    sDigitContent   resb  2
 section .text
     global main 
     extern prints
     extern reads
+    extern copybuffer
 main:
     push rbp
     mov rbp,rsp
     mov rdi,fDigit
     call prints
     mov rdi,input
-    mov rsi,3
+    mov rsi,1
     call reads
+    mov rcx,0x2
     mov rdi,input
+    mov rsi,fDigitContent
+    call copybuffer
+    mov rdi, input
+    call prints
+    mov rdi,NL
+    call prints
+    mov rdi,sDigit
+    call prints
+    mov rdi,input
+    mov rsi,1
+    call reads
+    ;mov r9,input
+    mov rdi,fDigitContent
     call prints
     jmp exits
-    ;mov r8,[rsi]
-    ;call prints
-    ;mov rsi,sDigit
-    ;call prints
     ;mov rsi,input
     ;mov rdx,inputL
     ;call reads
@@ -51,27 +65,6 @@ equalDigits:
     call prints
     pop rax
     jmp rax
-;---------------------------------------------
-;prints:
-    ; args rsi (content address) rdi (content length)
-;    push rbp
-;    mov rbp,rsp
-;    mov rax,1
-;    mov rdi,1
-;    syscall
-;    leave
-;    ret
-;---------------------------------------------
-;reads:
-    ; args rsi (contain address) rdi (content length)
-;    push rbp
-;    mov rbp,rsp
-;    xor rax,rax
-;    mov rdi,1
-;    syscall
-;    leave
-;    ret
-;---------------------------------------------
 exits:
     mov rax,60
     xor rdi,rdi
